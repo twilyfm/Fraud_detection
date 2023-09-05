@@ -25,9 +25,7 @@ def reduce_memory_usage(df):
                 elif min_ > np.iinfo(np.int64).min and max_ < np.iinfo(np.int64).max:
                     df[col] = df[col].astype(np.int64)
             else:
-                if min_ > np.finfo(np.float16).min and max_ < np.finfo(np.float16).max:
-                    df[col] = df[col].astype(np.float16)
-                elif min_ > np.finfo(np.float32).min and max_ < np.finfo(np.float32).max:
+                if min_ > np.finfo(np.float32).min and max_ < np.finfo(np.float32).max:
                     df[col] = df[col].astype(np.float32)
                 else:
                     df[col] = df[col].astype(np.float64)
